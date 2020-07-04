@@ -1,0 +1,43 @@
+package com.fita_spring_boot_l1.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "theatre")
+public class Theatre {
+	@Id//mandatory
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	Long id;
+	String name;
+	String address;
+	String city_id;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getCity_id() {
+		return city_id;
+	}
+	public void setCity_id(String city_id) {
+		this.city_id = city_id;
+	}
+
+}
