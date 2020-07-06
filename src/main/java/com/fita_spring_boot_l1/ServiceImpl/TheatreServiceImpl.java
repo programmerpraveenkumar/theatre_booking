@@ -32,20 +32,20 @@ public class TheatreServiceImpl implements TheatreService{
 	public List<MovieList> getRunningShowsByTiming(String from_time, String to_time) {
 		// TODO Auto-generated method stub
 		//
+		
 		try {
-			return movieListRepo.getRunningShowsByTiming(
-					new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(from_time),
-					new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(to_time)
-					);
+			String tot_time = new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(to_time).toString();
+			String fromt_time = new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(from_time).toString();
+			
+			System.out.println(tot_time+" "+fromt_time);
+			System.out.println(tot_time+" ---"+fromt_time);
+			return movieListRepo.getRunningShowsByTiming(from_time,to_time);
 //			return movieListRepo.getRunningShowsByTiming2(
 //					new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(from_time)
 //					
 //					);
-			
-//			return movieListRepo.getRunningShowsByTiming3(
-//			new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(to_time)
-//			
-//			);
+			//java.sql.Date sqlStartDate = new java.sql.Date(new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(tot_time));
+			//return movieListRepo.getRunningShowsByTiming3(to_time);
 			
 		}catch(Exception e) {
 			

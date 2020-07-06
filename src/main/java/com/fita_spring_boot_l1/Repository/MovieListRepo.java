@@ -1,6 +1,7 @@
 package com.fita_spring_boot_l1.Repository;
 
-import java.util.Date;
+
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -22,11 +23,11 @@ public interface MovieListRepo extends JpaRepository<MovieList, Long>{
 	@Query("Select movieList from MovieList movieList where movieList.theatre_id=:theatre_id")
 	List<MovieList> getRunningShowsByTheatreId(@Param("theatre_id")Long theatre_id);
 	@Query("Select movieList from MovieList movieList where movieList.date_from >= :startTime and movieList.date_to <= :endTime ")
-	List<MovieList> getRunningShowsByTiming(@Param("startTime")Date startTime,@Param("endTime")Date endTime);
-//	@Query("Select movieList from MovieList movieList where movieList.date_from >= :startTime")
-//	List<MovieList> getRunningShowsByTiming2(@Param("startTime")Date startTime);
-//	@Query("Select movieList from MovieList movieList where movieList.date_to <= :endTime")
-//	List<MovieList> getRunningShowsByTiming3(@Param("endTime")Date endTime);
+	List<MovieList> getRunningShowsByTiming(@Param("startTime")String startTime,@Param("endTime")String endTime);
+	@Query("Select movieList from MovieList movieList where movieList.date_from >= :startTime")
+	List<MovieList> getRunningShowsByTiming2(@Param("startTime")Date startTime);
+	@Query("Select movieList from MovieList movieList where movieList.date_to <= :endTime")
+	List<MovieList> getRunningShowsByTiming3(@Param("endTime")String endTime);
 	
 	
 }

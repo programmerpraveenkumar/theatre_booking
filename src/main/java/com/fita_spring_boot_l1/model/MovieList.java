@@ -17,10 +17,8 @@ public class MovieList {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;
 	String name;
-	@Temporal(TemporalType.TIMESTAMP)
-	Date date_from;
-	@Temporal(TemporalType.TIMESTAMP)
-	Date date_to;
+	String date_from;
+	String date_to;
 	Long theatre_id;
 	
 	Integer total_seats;
@@ -49,16 +47,18 @@ public class MovieList {
 	public void setTheatre_id(Long theatre_id) {
 		this.theatre_id = theatre_id;
 	}
-	public Date getDate_from() {
-		return date_from;
-	}
-	public void setDate_from(Date date_from) {
-		this.date_from = date_from;
-	}
-	public Date getDate_to() {
+	
+	public String getDate_to() {
 		return date_to;
 	}
-	public void setDate_to(Date date_to) {
+	public void setDate_to(String date_to) {
 		this.date_to = date_to;
 	}
+	public String getDate_from() {
+		return date_from;
+	}
+	public void setDate_from(String date_from) {
+		this.date_from = date_from;
+	}
+	
 }
